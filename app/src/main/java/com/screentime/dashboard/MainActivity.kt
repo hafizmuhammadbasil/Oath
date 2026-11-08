@@ -636,8 +636,14 @@ fun OutlineAction(text: String, onClick: () -> Unit) {
     OutlinedButton(
         onClick = onClick,
         shape = RoundedCornerShape(12.dp),
-        colors = ButtonDefaults.outlinedButtonColors(contentColor = Theme.Accent),
-        border = ButtonDefaults.outlinedButtonBorder(true).copy(
-            brush = androidx.compose.ui.graphics.SolidColor(Theme.Accent.copy(alpha = 0.35f))),
-    ) { Text(text, fontSize = 12.sp) }
+        colors = ButtonDefaults.outlinedButtonColors(
+            contentColor = Theme.Accent
+        ),
+        border = androidx.compose.foundation.BorderStroke(
+            1.dp,
+            Theme.Accent.copy(alpha = 0.35f)
+        )
+    ) {
+        Text(text, fontSize = 12.sp)
+    }
 }
