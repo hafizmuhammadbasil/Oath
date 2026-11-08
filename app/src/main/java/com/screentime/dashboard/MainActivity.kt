@@ -218,8 +218,7 @@ fun DashboardScreen() {
             lbl to minutesOf(SimpleDateFormat("yyyy-MM-dd", Locale.US).format(cal.time))
         }
     }
-    val avg14 = if (series.isEmpty()) 0 else series.sumOf { it.second } / series.length
-
+    val avg14 = if (series.isEmpty()) 0 else series.sumOf { it.second } / series.size
     // under-goal streak (from today, capped like the 400-day scan)
     var streak = 0
     for (i in 0 until 400) {
